@@ -1,6 +1,5 @@
 # Lista de TODO's
-- encurtador
-- paginação
+- paginação - melhorar layout
 - corrigir data-confirm
 - adicionar locale de tradução para itens em en e pt-br
 - fazer todas as camadas de testes

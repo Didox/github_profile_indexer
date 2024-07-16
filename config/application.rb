@@ -2,6 +2,7 @@ require_relative "boot"
 
 require "rails/all"
 
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -29,10 +30,10 @@ module GithubProfileIndexer
 
      # Configurar o locale padrão para pt-BR
      config.i18n.default_locale = :'pt-BR'
- 
+
      # Carregar traduções adicionais do diretório config/locales
      config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
-     
+
      # Configurar ActiveRecord para usar o fuso horário configurado
      config.active_record.default_timezone = :local
   end

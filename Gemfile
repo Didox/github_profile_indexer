@@ -29,6 +29,7 @@ gem "jbuilder"
 gem 'nokogiri'
 gem 'httparty'
 gem 'bitly'
+gem 'will_paginate'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
