@@ -1,0 +1,18 @@
+<div class="container mt-4">
+  <div class="jumbotron">
+    <h1 class="display-4">Bem-vindo ao Github Profile Indexer!</h1>
+    <p class="lead">Este é um aplicativo que permite cadastrar perfis do Github, realizar scraping de informações e exibir dados detalhados dos perfis.</p>
+    <hr class="my-4">
+    <p>Instruções para usar o aplicativo:</p>
+    <ol>
+      <li><strong>Cadastro de Perfis:</strong> Vá para a página de <%= link_to 'Perfis', profiles_path %> e clique em "Novo Perfil" para cadastrar um novo perfil do Github.</li>
+      <li><strong>Scraping de Informações:</strong> Após cadastrar um perfil, o aplicativo irá automaticamente realizar o scraping das informações do Github, incluindo o nome de usuário, seguidores, seguindo, estrelas, contribuições, imagem de perfil, organização e localização.</li>
+      <li><strong>Encurtamento de URLs:</strong> A URL do perfil do Github será armazenada de forma encurtada. Você pode ver a URL completa ao clicar no link do perfil.</li>
+      <li><strong>Re-escaneamento:</strong> Você pode re-escanear um perfil manualmente para atualizar as informações. Basta ir à página do perfil e clicar no botão "Re-escanear".</li>
+      <li><strong>Interface de Usuário:</strong> Utilize a interface para buscar perfis, visualizar detalhes e editar ou remover perfis cadastrados.</li>
+    </ol>
+    <p class="lead">
+      <%= link_to 'Ver Perfis', profiles_path, class: 'btn btn-primary btn-lg' %>
+    </p>
+  </div>
+</div>

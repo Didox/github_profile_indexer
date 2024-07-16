@@ -1,0 +1,11 @@
+<div class="container mt-4">
+  <h1>Editando Perfil</h1>
+  <hr class="my-4">
+
+  <%= render "form", profile: @profile %>
+
+  <div class="mt-3">
+    <%= link_to "Mostrar este perfil", @profile, class: "btn btn-info" %>
+    <%= link_to "Voltar para perfis", profiles_path, class: "btn btn-secondary" %>
+  </div>
+</div>

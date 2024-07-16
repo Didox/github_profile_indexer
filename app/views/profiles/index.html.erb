@@ -1,0 +1,26 @@
+<h1>Listagem de Perfis</h1>
+<hr class="my-4">
+
+<%= link_to 'Novo Perfil', new_profile_path, class: 'btn btn-primary mb-3' %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>URL do Github</th>
+      <th>Imagem de Perfil</th>
+      <th>Nome de Usuário</th>
+      <th>Seguidores</th>
+      <th>Seguindo</th>
+      <th>Organização</th>
+      <th colspan="2">Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profiles.each do |profile| %>
+      <%= render partial: 'profile_row', locals: { profile: profile } %>
+    <% end %>
+  </tbody>
+</table>
+

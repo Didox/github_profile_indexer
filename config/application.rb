@@ -23,5 +23,17 @@ module GithubProfileIndexer
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+     # Configurar o fuso horário para São Paulo
+     config.time_zone = 'Brasilia'
+
+     # Configurar o locale padrão para pt-BR
+     config.i18n.default_locale = :'pt-BR'
+ 
+     # Carregar traduções adicionais do diretório config/locales
+     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+     
+     # Configurar ActiveRecord para usar o fuso horário configurado
+     config.active_record.default_timezone = :local
   end
 end

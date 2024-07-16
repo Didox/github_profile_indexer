@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ nav .logo{
+    width: 50px;
+ }
+
+ main{
+   margin: 50px;
+ }

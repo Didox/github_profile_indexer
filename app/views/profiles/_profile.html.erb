@@ -1,0 +1,64 @@
+<div class="card mb-3">
+  <div class="card-header">
+    <h5><%= profile.name %></h5>
+  </div>
+  <div class="card-body">
+    <p>
+      <strong>URL do Github:</strong>
+      <%= link_to profile.github_url, profile.github_url, target: "_blank" %>
+    </p>
+
+    <p>
+      <strong>URL Encurtada do Github:</strong>
+      <%= link_to @profile.short_github_url, @profile.short_github_url, target: "_blank" %>
+    </p>
+
+    <% if profile.profile_info.present? %>
+      <p>
+        <strong>Imagem de Perfil:</strong><br>
+        <%= image_tag profile.profile_info.profile_image_url.gsub(/\?s=\d+/, '?s=300'), alt: profile.profile_info.username, class: "img-thumbnail", size: "300x300" %>
+      </p>
+
+      <p>
+        <strong>Nome de Usuário:</strong>
+        <%= profile.profile_info.username %>
+      </p>
+
+      <p>
+        <strong>Seguidores:</strong>
+        <%= profile.profile_info.followers %>
+      </p>
+
+      <p>
+        <strong>Seguindo:</strong>
+        <%= profile.profile_info.following %>
+      </p>
+
+      <p>
+        <strong>Estrelas:</strong>
+        <%= profile.profile_info.stars %>
+      </p>
+
+      <p>
+        <strong>Contribuições (último ano):</strong>
+        <%= profile.profile_info.contributions %>
+      </p>
+
+      <% if profile.profile_info.organization.present? %>
+        <p>
+          <strong>Organização:</strong>
+          <%= profile.profile_info.organization %>
+        </p>
+      <% end %>
+
+      <% if profile.profile_info.location.present? %>
+        <p>
+          <strong>Localização:</strong>
+          <%= profile.profile_info.location %>
+        </p>
+      <% end %>
+    <% else %>
+      <p>Nenhuma informação adicional disponível.</p>
+    <% end %>
+  </div>
+</div>

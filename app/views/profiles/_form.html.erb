@@ -1,0 +1,26 @@
+<%= form_with(model: profile, local: true, class: "needs-validation") do |form| %>
+  <% if profile.errors.any? %>
+    <div class="alert alert-danger">
+      <h4 class="alert-heading"><%= pluralize(profile.errors.count, "erro") %> proibiram este perfil de ser salvo:</h4>
+      <ul>
+        <% profile.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, "Nome", class: "form-label" %>
+    <%= form.text_field :name, class: "form-control", required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :github_url, "URL do Github", class: "form-label" %>
+    <%= form.text_field :github_url, class: "form-control", required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit "Salvar", class: "btn btn-primary" %>
+  </div>
+<% end %>
