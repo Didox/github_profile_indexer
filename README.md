@@ -10,7 +10,6 @@ Bem-vindo ao Github Profile Indexer! Este aplicativo permite que os usuários re
 - [Configuração](#configuração)
 - [Uso](#uso)
 - [Testes](#testes)
-- [Comandos](#comandos)
 - [Contato](#contato)
 
 ## Instalação
@@ -79,50 +78,6 @@ Usamos RSpec e Guard para testes e monitoramento de mudanças no código.
    ```sh
    bundle exec guard
    ```
-
-## Comandos
-
-- **Iniciar o servidor Rails:**
-
-  ```sh
-  bundle exec rails s
-  ```
-
-- **Criar o banco de dados:**
-
-  ```sh
-  bundle exec rails db:create
-  ```
-
-- **Executar migrações do banco de dados:**
-
-  ```sh
-  bundle exec rails db:migrate
-  ```
-
-- **Popular o banco de dados:**
-
-  ```sh
-  bundle exec rails db:seed
-  ```
-
-- **Executar Rubocop para linting de código:**
-
-  ```sh
-  bundle exec rubocop
-  ```
-
-- **Executar RSpec para testes:**
-
-  ```sh
-  bundle exec rspec
-  ```
-
-- **Usar Guard para executar testes automaticamente em mudanças de arquivos:**
-
-  ```sh
-  bundle exec guard
-  ```
 
 ## Contato
 
