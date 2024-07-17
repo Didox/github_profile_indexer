@@ -1,5 +1,13 @@
 ---
 pt-BR:
+  views:
+    pagination:
+      first: 'Primeira'
+      last: 'Última'
+      previous: 'Anterior'
+      next: 'Próxima'
+      truncate: '...'
+
   activerecord:
     errors:
       messages:
