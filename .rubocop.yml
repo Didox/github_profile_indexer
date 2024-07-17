@@ -1,3 +1,23 @@
 inherit_from: .rubocop_todo.yml
+
 AllCops:
+  TargetRubyVersion: 3.1
   SuggestExtensions: false
+
+Layout/IndentationStyle:
+  EnforcedStyle: spaces
+
+Layout/IndentationWidth:
+  Width: 2
+
+Layout/IndentationConsistency:
+  Enabled: true
+
+Layout/FirstParameterIndentation:
+  EnforcedStyle: consistent
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
