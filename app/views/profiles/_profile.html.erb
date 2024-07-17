@@ -4,63 +4,63 @@
   </div>
   <div class="card-body">
     <p>
-      <strong>URL do Github:</strong>
+      <strong><%= t('views.profiles.profile.github_url') %>:</strong>
       <%= link_to profile.github_url, profile.github_url, target: "_blank" %>
     </p>
 
     <% if @profile.short_github_url.present? %>
       <p>
-        <strong>URL Encurtada do Github:</strong>
+        <strong><%= t('views.profiles.profile.short_github_url') %>:</strong>
         <%= link_to @profile.short_github_url, @profile.short_github_url, target: "_blank" %>
       </p>
     <% end %>
 
     <% if profile.profile_info.present? %>
       <p>
-        <strong>Imagem de Perfil:</strong><br>
+        <strong><%= t('views.profiles.profile.profile_image') %>:</strong><br>
         <%= image_tag profile.profile_info.profile_image_url.gsub(/\?s=\d+/, '?s=300'), alt: profile.profile_info.username, class: "img-thumbnail", size: "300x300" %>
       </p>
 
       <p>
-        <strong>Nome de Usuário:</strong>
+        <strong><%= t('views.profiles.profile.username') %>:</strong>
         <%= profile.profile_info.username %>
       </p>
 
       <p>
-        <strong>Seguidores:</strong>
+        <strong><%= t('views.profiles.profile.followers') %>:</strong>
         <%= profile.profile_info.followers %>
       </p>
 
       <p>
-        <strong>Seguindo:</strong>
+        <strong><%= t('views.profiles.profile.following') %>:</strong>
         <%= profile.profile_info.following %>
       </p>
 
       <p>
-        <strong>Estrelas:</strong>
+        <strong><%= t('views.profiles.profile.stars') %>:</strong>
         <%= profile.profile_info.stars %>
       </p>
 
       <p>
-        <strong>Contribuições (último ano):</strong>
+        <strong><%= t('views.profiles.profile.contributions') %>:</strong>
         <%= profile.profile_info.contributions %>
       </p>
 
       <% if profile.profile_info.organization.present? %>
         <p>
-          <strong>Organização:</strong>
+          <strong><%= t('views.profiles.profile.organization') %>:</strong>
           <%= profile.profile_info.organization %>
         </p>
       <% end %>
 
       <% if profile.profile_info.location.present? %>
         <p>
-          <strong>Localização:</strong>
+          <strong><%= t('views.profiles.profile.location') %>:</strong>
           <%= profile.profile_info.location %>
         </p>
       <% end %>
     <% else %>
-      <p>Endereço do github não encontrado.</p>
+      <p><%= t('views.profiles.profile.not_found') %></p>
     <% end %>
   </div>
 </div>

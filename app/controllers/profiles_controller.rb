@@ -23,30 +23,33 @@ class ProfilesController < ApplicationController
   def create
     @profile = ProfileService.save(profile_params)
     if @profile.errors.blank?
-      redirect_to @profile, notice: 'Perfil criado com sucesso.'
+      redirect_to @profile, notice: t('flash.profiles.create.success')
     else
+      flash.now[:alert] = t('flash.profiles.create.error')
       render :new, status: :unprocessable_entity
     end
   end
 
   def update
     if ProfileService.update(@profile, profile_params)
-      redirect_to @profile, notice: 'Perfil atualizado com sucesso.'
+      redirect_to @profile, notice: t('flash.profiles.update.success')
     else
+      flash.now[:alert] = t('flash.profiles.update.error')
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @profile.destroy
-    redirect_to profiles_url, notice: 'Perfil excluído com sucesso.'
+    redirect_to profiles_url, notice: t('flash.profiles.destroy.success')
   end
 
   def rescan
     ProfileService.new(@profile).scraper!
-    redirect_to @profile, notice: 'Perfil rescanado com sucesso.'
+    redirect_to @profile, notice: t('flash.profiles.rescan.success')
   rescue StandardError => e
     @profile = ProfileService.error_profile(@profile, e)
+    flash.now[:alert] = t('flash.profiles.rescan.error')
     render :edit, status: :unprocessable_entity
   end
 

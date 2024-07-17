@@ -1,6 +1,77 @@
 ---
 pt-BR:
+  layout:
+    title: "Github Profile Indexer"
+    home: "Home"
+    profiles: "Perfis"
+    footer: "© 2024 Github Profile Indexer"
+    logo_alt: "Github Profile Indexer - Indexador de perfis do github"
+    logo_title: "Github Profile Indexer"
+
+  home:
+    welcome: "Bem-vindo ao Github Profile Indexer!"
+    lead: "Este é um aplicativo que permite cadastrar perfis do Github, realizar scraping de informações e exibir dados detalhados dos perfis."
+    instructions: "Instruções para usar o aplicativo:"
+    steps:
+      step1: "Cadastro de Perfis: Vá para a página de %{link_to_profiles} e clique em 'Novo Perfil' para cadastrar um novo perfil do Github."
+      step2: "Scraping de Informações: Após cadastrar um perfil, o aplicativo irá automaticamente realizar o scraping das informações do Github, incluindo o nome de usuário, seguidores, seguindo, estrelas, contribuições, imagem de perfil, organização e localização."
+      step3: "Encurtamento de URLs: A URL do perfil do Github será armazenada de forma encurtada. Você pode ver a URL completa ao clicar no link do perfil."
+      step4: "Re-escaneamento: Você pode re-escanear um perfil manualmente para atualizar as informações. Basta ir à página do perfil e clicar no botão 'Re-escanear'."
+      step5: "Interface de Usuário: Utilize a interface para buscar perfis, visualizar detalhes e editar ou remover perfis cadastrados."
+    view_profiles: "Ver Perfis"
+
   views:
+    profiles:
+      show:
+        new_profile: "Novo perfil"
+        edit_profile: "Editar este perfil"
+        delete_profile: "Excluir este perfil"
+        rescan_profile: "Rescanear perfil"
+        back_to_profiles: "Voltar para perfis"
+        confirm_delete: "Você tem certeza?"
+        notice_success: "Operação realizada com sucesso"
+      new:
+        title: "Novo Perfil"
+        back_to_profiles: "Voltar para perfis"
+      index:
+        title: "Listagem de Perfis"
+        new_profile: "Novo Perfil"
+        search_label: "Buscar por nome:"
+        search_button: "Buscar"
+        no_profiles: "Nenhum perfil por aqui"
+        table:
+          name: "Nome"
+          github_url: "URL do Github"
+          profile_image: "Imagem de Perfil"
+          username: "Nome de Usuário"
+          followers: "Seguidores"
+          following: "Seguindo"
+          organization: "Organização"
+          actions: "Ações"
+      profile:
+        github_url: "URL do Github"
+        short_github_url: "URL Encurtada do Github"
+        profile_image: "Imagem de Perfil"
+        username: "Nome de Usuário"
+        followers: "Seguidores"
+        following: "Seguindo"
+        stars: "Estrelas"
+        contributions: "Contribuições (último ano)"
+        organization: "Organização"
+        location: "Localização"
+        not_found: "Endereço do github não encontrado."
+      edit:
+        title: "Editando Perfil"
+        show_profile: "Mostrar este perfil"
+        rescan_profile: "Rescanear perfil"
+        back_to_profiles: "Voltar para perfis"
+      row:
+        not_found: "Endereço do github não encontrado."
+        edit: "Editar"
+        show: "Mostrar"
+      form:
+        errors_heading: "Confira os erros abaixo:"
+        submit: "Salvar"
     pagination:
       first: 'Primeira'
       last: 'Última'
@@ -9,6 +80,30 @@ pt-BR:
       truncate: '...'
 
   activerecord:
+    models:
+      profile: "Perfil"
+    attributes:
+      profile:
+        name: "Nome"
+        github_url: "URL do Github"
+  flash:
+    profiles:
+      create:
+        success: "Perfil criado com sucesso."
+        error: "Erro ao criar o perfil."
+      update:
+        success: "Perfil atualizado com sucesso."
+        error: "Erro ao atualizar o perfil."
+      destroy:
+        success: "Perfil excluído com sucesso."
+      rescan:
+        success: "Perfil rescanado com sucesso."
+        error: "Erro ao rescanear o perfil."
+  helpers:
+    submit:
+      create: "Criar %{model}"
+      update: "Atualizar %{model}"
+      submit: "Salvar %{model}"
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

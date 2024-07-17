@@ -1,5 +1,5 @@
 <div class="container mt-4">
-  <h1>Novo Perfil</h1>
+  <h1><%= t('views.profiles.new.title') %></h1>
   <hr class="my-4">
 
   <%= render "form", profile: @profile %>
@@ -7,6 +7,6 @@
   <hr class="my-4">
 
   <div class="mt-3">
-    <%= link_to "Voltar para perfis", profiles_path, class: "btn btn-secondary" %>
+    <%= link_to t('views.profiles.new.back_to_profiles'), profiles_path, class: "btn btn-secondary" %>
   </div>
 </div>

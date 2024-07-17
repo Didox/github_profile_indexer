@@ -29,7 +29,8 @@ module GithubProfileIndexer
      config.time_zone = 'Brasilia'
 
      # Configurar o locale padrão para pt-BR
-     config.i18n.default_locale = :'pt-BR'
+     config.i18n.default_locale = :'en'
+    #  config.i18n.default_locale = :'pt-BR'
 
      # Carregar traduções adicionais do diretório config/locales
      config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]

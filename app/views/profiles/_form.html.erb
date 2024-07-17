@@ -1,26 +1,26 @@
 <%= form_with(model: profile, local: true, class: "needs-validation") do |form| %>
   <% if profile.errors.any? %>
     <div class="alert alert-danger">
-      <h4 class="alert-heading">Confira os erros abaixo:</h4>
+      <h4 class="alert-heading"><%= t('views.profiles.form.errors_heading') %></h4>
       <ul>
-        <% profile.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% profile.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="mb-3">
-    <%= form.label :name, "Nome", class: "form-label" %>
+    <%= form.label :name, t('activerecord.attributes.profile.name'), class: "form-label" %>
     <%= form.text_field :name, class: "form-control", required: true %>
   </div>
 
   <div class="mb-3">
-    <%= form.label :github_url, "URL do Github", class: "form-label" %>
+    <%= form.label :github_url, t('activerecord.attributes.profile.github_url'), class: "form-label" %>
     <%= form.text_field :github_url, class: "form-control", required: true %>
   </div>
 
   <div class="mb-3">
-    <%= form.submit "Salvar", class: "btn btn-primary" %>
+    <%= form.submit t('views.profiles.form.submit'), class: "btn btn-primary" %>
   </div>
 <% end %>

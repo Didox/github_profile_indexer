@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root 'home#index'
-  get '/s/:unique_key', to: 'shortened_urls#show', as: :short
 
   resources :profiles do
     member do
@@ -11,4 +10,6 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+
+  get 'change_language/:locale', to: 'application#change_language', as: :change_language
 end

@@ -8,8 +8,8 @@
     <td><%= profile.profile_info.following %></td>
     <td><%= profile.profile_info.organization %></td>
   <% else %>
-    <td colspan="5">Endereço do github não encontrado.</td>
+    <td colspan="5"><%= t('views.profiles.row.not_found') %></td>
   <% end %>
-  <td><%= link_to 'Editar', edit_profile_path(profile), class: 'btn btn-warning' %></td>
-  <td><%= link_to 'Mostrar', profile, class: 'btn btn-info' %></td>
+  <td><%= link_to t('views.profiles.row.edit'), edit_profile_path(profile), class: 'btn btn-warning' %></td>
+  <td><%= link_to t('views.profiles.row.show'), profile, class: 'btn btn-info' %></td>
 </tr>
