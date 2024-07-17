@@ -1,7 +1,7 @@
 <%= form_with(model: profile, local: true, class: "needs-validation") do |form| %>
   <% if profile.errors.any? %>
     <div class="alert alert-danger">
-      <h4 class="alert-heading"><%= pluralize(profile.errors.count, "erro") %> proibiram este perfil de ser salvo:</h4>
+      <h4 class="alert-heading">Confira os erros abaixo:</h4>
       <ul>
         <% profile.errors.each do |error| %>
           <li><%= error.full_message %></li>

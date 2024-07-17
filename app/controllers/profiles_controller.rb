@@ -5,6 +5,11 @@ class ProfilesController < ApplicationController
     @profiles = Profile.page(params[:page]).per(5)
   end
 
+  def search
+    @profiles = Profile.where('name LIKE ?', "%#{params[:q]}%").page(params[:page]).per(5)
+    render :index
+  end
+
   def show
   end
 
@@ -16,21 +21,19 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @profile = Profile.new(profile_params)
-    if @profile.save
-      scrape_and_update_profile(@profile)
+    @profile = ProfileService.save(profile_params)
+    if @profile.errors.blank?
       redirect_to @profile, notice: 'Perfil criado com sucesso.'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
   def update
-    if @profile.update(profile_params)
-      scrape_and_update_profile(@profile)
+    if ProfileService.update(@profile, profile_params)
       redirect_to @profile, notice: 'Perfil atualizado com sucesso.'
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -40,8 +43,11 @@ class ProfilesController < ApplicationController
   end
 
   def rescan
-    scrape_and_update_profile(@profile)
+    ProfileService.new(@profile).scraper!
     redirect_to @profile, notice: 'Perfil rescanado com sucesso.'
+  rescue StandardError => e
+    @profile = ProfileService.error_profile(@profile, e)
+    render :edit, status: :unprocessable_entity
   end
 
   private
@@ -52,16 +58,5 @@ class ProfilesController < ApplicationController
 
   def profile_params
     params.require(:profile).permit(:name, :github_url)
-  end
-
-
-  def scrape_and_update_profile(profile)
-    scraper = GithubScraper.new(profile.github_url)
-    scraped_data = scraper.scrape
-    if profile.profile_info.present?
-      profile.profile_info.update(scraped_data)
-    else
-      profile.create_profile_info(scraped_data)
-    end
   end
 end

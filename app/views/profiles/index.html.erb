@@ -1,6 +1,18 @@
 <h1>Listagem de Perfis</h1>
 <hr class="my-4">
 
+<%= form_with url: search_profiles_path, method: :get, local: true, class: "row g-3 mb-3" do %>
+  <div class="col-auto">
+    <%= label_tag :q, "Buscar por nome:", class: "form-label" %>
+  </div>
+  <div class="col-auto">
+    <%= text_field_tag :q, params[:q], class: "form-control" %>
+  </div>
+  <div class="col-auto">
+    <%= submit_tag "Buscar", class: "btn btn-primary mb-3" %>
+  </div>
+<% end %>
+
 <%= link_to 'Novo Perfil', new_profile_path, class: 'btn btn-primary mb-3' %>
 
 <table class="table table-striped">

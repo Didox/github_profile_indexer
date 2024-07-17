@@ -12,7 +12,7 @@
       <%= link_to "Novo perfil", new_profile_path, class: "btn btn-primary me-2" %>
       <%= link_to "Editar este perfil", edit_profile_path(@profile), class: "btn btn-warning me-2" %>
       <%= button_to "Excluir este perfil", @profile, method: :delete, data: { confirm: "Você tem certeza?" }, class: "btn btn-danger me-2" %>
-      <%= button_to "Rescanear perfil", rescan_profile_path(@profile), method: :post, class: "btn btn-info" %>
+      <%= button_to "Rescanear perfil", rescan_profile_path(@profile), method: :post, class: "btn btn-success" %>
     </div>
     <%= link_to "Voltar para perfis", profiles_path, class: "btn btn-secondary" %>
   </div>

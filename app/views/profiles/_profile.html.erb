@@ -8,10 +8,12 @@
       <%= link_to profile.github_url, profile.github_url, target: "_blank" %>
     </p>
 
-    <p>
-      <strong>URL Encurtada do Github:</strong>
-      <%= link_to @profile.short_github_url, @profile.short_github_url, target: "_blank" %>
-    </p>
+    <% if @profile.short_github_url.present? %>
+      <p>
+        <strong>URL Encurtada do Github:</strong>
+        <%= link_to @profile.short_github_url, @profile.short_github_url, target: "_blank" %>
+      </p>
+    <% end %>
 
     <% if profile.profile_info.present? %>
       <p>
@@ -58,7 +60,7 @@
         </p>
       <% end %>
     <% else %>
-      <p>Nenhuma informação adicional disponível.</p>
+      <p>Endereço do github não encontrado.</p>
     <% end %>
   </div>
 </div>
