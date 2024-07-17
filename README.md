@@ -4,8 +4,10 @@
 - melhorar layout
 
 # comandos
-- rails s
-- rails db:create
-- rails db:migrate
-- rails db:seed
+- bundle exec rails s
+- bundle exec rails db:create
+- bundle exec rails db:migrate
+- bundle exec rails db:seed
 - bundle exec rubocop
+- bundle exec rspec
+- bundle exec guard
