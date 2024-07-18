@@ -136,8 +136,7 @@ Para visualizar a cobertura dos testes, abra o arquivo `coverage/index.html` em 
    ```
 
 ## Como acessar o app
-   - [Aplicação no Heroku](https://github-profile-indexer-cf61ca4adfe2.herokuapp.com)
-   - [Aplicação com DNS personalizado](http://fretadao.didox.com.br)
+   - [http://fretadao.didox.com.br](http://fretadao.didox.com.br)
 
 ## Contato
 
