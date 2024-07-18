@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2024-07-17T20:31:32-03:00">2024-07-17T20:31:32-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2024-07-17T21:14:27-03:00">2024-07-17T21:14:27-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>348</b> relevant lines,
-    <span class="green"><b>341</b> lines covered</span> and
+    <b>349</b> relevant lines,
+    <span class="green"><b>342</b> lines covered</span> and
     <span class="red"><b>7</b> lines missed. </span>
     (<span class="green">
   97.99%
@@ -139,11 +139,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#d1b06872e8e8be5884c3378a39f5b4b453cddf54" class="src_link" title="app/services/github_scraper.rb">app/services/github_scraper.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">38</td>
-            <td class="cell--number">18</td>
-            <td class="cell--number">18</td>
+            <td class="cell--number">39</td>
+            <td class="cell--number">19</td>
+            <td class="cell--number">19</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">2.28</td>
+            <td class="cell--number">2.32</td>
             
           </tr>
         
@@ -826,8 +826,8 @@
     
 
     <div class="t-line-summary">
-      <b>18</b> relevant lines.
-      <span class="green"><b>18</b> lines covered</span> and
+      <b>19</b> relevant lines.
+      <span class="green"><b>19</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1032,7 +1032,7 @@
 
             
 
-            <code class="ruby">      stars: @parsed_page.css(&#39;a[data-tab-item=&quot;stars&quot;] .Counter&#39;).first&amp;.text&amp;.strip,</code>
+            <code class="ruby">      stars: @parsed_page.css(&#39;a[data-tab-item=&quot;stars&quot;] .Counter&#39;).first&amp;.text&amp;.strip || 0,</code>
           </li>
         </div>
       
@@ -1153,7 +1153,7 @@
 
             
 
-            <code class="ruby">    contributions_url = &quot;https://github.com/users/#{@username}/contributions&quot;</code>
+            <code class="ruby">    puts  &quot;https://github.com/users/#{@username}/contributions&quot;</code>
           </li>
         </div>
       
@@ -1164,12 +1164,23 @@
 
             
 
+            <code class="ruby">    contributions_url = &quot;https://github.com/users/#{@username}/contributions&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="31">
+            <span class="hits">3</span>
+            
+
+            
+
             <code class="ruby">    response = HTTParty.get(contributions_url)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="31">
+          <li class="never" data-hits="" data-linenumber="32">
             
             
 
@@ -1180,7 +1191,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="32">
+          <li class="covered" data-hits="3" data-linenumber="33">
             <span class="hits">3</span>
             
 
@@ -1191,7 +1202,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="33">
+          <li class="never" data-hits="" data-linenumber="34">
             
             
 
@@ -1202,7 +1213,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="34">
+          <li class="covered" data-hits="2" data-linenumber="35">
             <span class="hits">2</span>
             
 
@@ -1213,7 +1224,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="35">
+          <li class="covered" data-hits="2" data-linenumber="36">
             <span class="hits">2</span>
             
 
@@ -1224,7 +1235,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="36">
+          <li class="covered" data-hits="2" data-linenumber="37">
             <span class="hits">2</span>
             
 
@@ -1235,7 +1246,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="37">
+          <li class="never" data-hits="" data-linenumber="38">
             
             
 
@@ -1246,7 +1257,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="38">
+          <li class="never" data-hits="" data-linenumber="39">
             
             
 

@@ -26,7 +26,6 @@ class GithubScraper
   private
 
   def fetch_contributions
-    puts  "https://github.com/users/#{@username}/contributions"
     contributions_url = "https://github.com/users/#{@username}/contributions"
     response = HTTParty.get(contributions_url)
 
