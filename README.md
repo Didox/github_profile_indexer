@@ -106,7 +106,7 @@ Para visualizar a cobertura dos testes, abra o arquivo `coverage/index.html` em 
 1. **Crie um aplicativo no Heroku:**
 
    ```sh
-   heroku create nome-do-seu-app
+   heroku create github-profile-indexer-cf61ca4adfe2
    ```
 
 2. **Adicione o PostgreSQL ao seu aplicativo:**
@@ -127,6 +127,11 @@ Para visualizar a cobertura dos testes, abra o arquivo `coverage/index.html` em 
    heroku run rails db:migrate
    heroku run rails db:seed
    ```
+
+5. **Acesse a aplicação no Heroku:**
+
+   - [Aplicação no Heroku](https://github-profile-indexer-cf61ca4adfe2.herokuapp.com)
+   - [Aplicação com DNS personalizado](http://fretadao.didox.com.br)
 
 ## Contato
 
