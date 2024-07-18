@@ -135,7 +135,7 @@ Para visualizar a cobertura dos testes, abra o arquivo `coverage/index.html` em 
    heroku config:set TOKEN_BITLY="SEU_TOKEN_BITLY"
    ```
 
-## Como acessar o ap
+## Como acessar o app
    - [Aplicação no Heroku](https://github-profile-indexer-cf61ca4adfe2.herokuapp.com)
    - [Aplicação com DNS personalizado](http://fretadao.didox.com.br)
 
