@@ -12,7 +12,7 @@ Bem-vindo ao Github Profile Indexer! Este aplicativo permite que os usuários re
 - [Testes](#testes)
 - [Cobertura de Testes](#cobertura-de-testes)
 - [Deploy no Heroku](#deploy-no-heroku)
-- [Como acessar o app](#como-acessar-o-app)
+- [Acesso ao app](#acesso-ao-app)
 - [Contato](#contato)
 
 ## Instalação
@@ -135,7 +135,7 @@ Para visualizar a cobertura dos testes, abra o arquivo `coverage/index.html` em 
    heroku config:set TOKEN_BITLY="SEU_TOKEN_BITLY"
    ```
 
-## Como acessar o app
+## Acesso ao app
    - [http://fretadao.didox.com.br](http://fretadao.didox.com.br)
 
 ## Contato
