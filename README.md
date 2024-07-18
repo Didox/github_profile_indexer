@@ -10,6 +10,8 @@ Bem-vindo ao Github Profile Indexer! Este aplicativo permite que os usuários re
 - [Configuração](#configuração)
 - [Uso](#uso)
 - [Testes](#testes)
+- [Cobertura de Testes](#cobertura-de-testes)
+- [Deploy no Heroku](#deploy-no-heroku)
 - [Contato](#contato)
 
 ## Instalação
@@ -29,7 +31,24 @@ Bem-vindo ao Github Profile Indexer! Este aplicativo permite que os usuários re
    bundle install
    ```
 
-3. **Configuração do banco de dados (Postgres) :**
+3. **Instale o PostgreSQL:**
+
+   Siga as instruções para instalar o PostgreSQL no seu sistema operacional:
+
+   - **Ubuntu:**
+     ```sh
+     sudo apt update
+     sudo apt install postgresql postgresql-contrib
+     ```
+   - **MacOS:**
+     ```sh
+     brew install postgresql
+     ```
+   - **Windows:**
+     Baixe e instale o PostgreSQL do [site oficial](https://www.postgresql.org/download/windows/).
+
+4. **Configuração do banco de dados (Postgres):**
+
    ```sh
    bundle exec rails db:create
    bundle exec rails db:migrate
@@ -76,6 +95,37 @@ Usamos RSpec e Guard para testes e monitoramento de mudanças no código.
 
    ```sh
    bundle exec guard
+   ```
+
+## Cobertura de Testes
+
+Para visualizar a cobertura dos testes, abra o arquivo `coverage/index.html` em seu navegador. Este arquivo é gerado após a execução dos testes com RSpec e fornece um relatório detalhado da cobertura de código.
+
+## Deploy no Heroku
+
+1. **Crie um aplicativo no Heroku:**
+
+   ```sh
+   heroku create nome-do-seu-app
+   ```
+
+2. **Adicione o PostgreSQL ao seu aplicativo:**
+
+   ```sh
+   heroku addons:create heroku-postgresql:hobby-dev
+   ```
+
+3. **Faça o deploy da sua aplicação:**
+
+   ```sh
+   git push heroku main
+   ```
+
+4. **Execute as migrações e seeds no Heroku:**
+
+   ```sh
+   heroku run rails db:migrate
+   heroku run rails db:seed
    ```
 
 ## Contato
