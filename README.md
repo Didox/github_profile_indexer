@@ -29,8 +29,7 @@ Bem-vindo ao Github Profile Indexer! Este aplicativo permite que os usuários re
    bundle install
    ```
 
-3. **Configuração do banco de dados:**
-
+3. **Configuração do banco de dados (Postgres) :**
    ```sh
    bundle exec rails db:create
    bundle exec rails db:migrate

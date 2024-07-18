@@ -15,7 +15,7 @@ class GithubScraper
       username: @parsed_page.css('.p-nickname.vcard-username.d-block').text.strip,
       followers: @parsed_page.css('a[href$="tab=followers"] .text-bold').text.strip,
       following: @parsed_page.css('a[href$="tab=following"] .text-bold').text.strip,
-      stars: @parsed_page.css('a[data-tab-item="stars"] .Counter').first&.text&.strip,
+      stars: @parsed_page.css('a[data-tab-item="stars"] .Counter').first&.text&.strip || 0,
       contributions: contributions,
       profile_image_url: @parsed_page.css('.avatar-user').first['src'],
       organization: @parsed_page.css('.p-org').text.strip.presence,
@@ -26,6 +26,7 @@ class GithubScraper
   private
 
   def fetch_contributions
+    puts  "https://github.com/users/#{@username}/contributions"
     contributions_url = "https://github.com/users/#{@username}/contributions"
     response = HTTParty.get(contributions_url)
 

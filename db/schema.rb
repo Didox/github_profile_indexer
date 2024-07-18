@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_07_16_220651) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "profile_infos", force: :cascade do |t|
     t.string "username"
     t.string "followers"
@@ -20,7 +23,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_16_220651) do
     t.string "profile_image_url"
     t.string "organization"
     t.string "location"
-    t.integer "profile_id", null: false
+    t.bigint "profile_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_profile_infos_on_profile_id"
