@@ -8,12 +8,10 @@
       <%= link_to profile.github_url, profile.github_url, target: "_blank" %>
     </p>
 
-    <% if @profile.short_github_url.present? %>
       <p>
         <strong><%= t('views.profiles.profile.short_github_url') %>:</strong>
         <%= link_to @profile.short_github_url, @profile.short_github_url, target: "_blank" %>
       </p>
-    <% end %>
 
     <% if profile.profile_info.present? %>
       <p>

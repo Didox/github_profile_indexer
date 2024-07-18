@@ -43,7 +43,6 @@ class ProfileService
 
   def shorten_github_url!
     return if @profile.blank?
-
     short_url = UrlShortenerService.new(@profile.github_url).shorten
     @profile.update!(short_github_url: short_url) if short_url.present?
   end
